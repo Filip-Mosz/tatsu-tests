@@ -59,12 +59,12 @@ public class StringTatsuUtilsTest {
                 .isNotBlank();
 
 
-        assertThat(StringTatsuUtils.getFullName(null, "Doe"))
+        assertThat(StringTatsuUtils.getFullName(null, "  Doe  "))
                 .isEqualTo("Doe")
                 .isNotNull()
                 .isNotBlank();
 
-        assertThat(StringTatsuUtils.getFullName("Joe", null))
+        assertThat(StringTatsuUtils.getFullName("Joe  ", null))
                 .isEqualTo("Joe")
                 .isNotNull()
                 .isNotBlank();

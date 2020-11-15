@@ -26,6 +26,12 @@ public class StringTatsuUtils {
 	}
 
 	public static String getFullName(String name, String surname) {
+		if (name != null) {
+			name = name.trim();
+		}
+		if (surname != null){
+			surname = surname.trim();
+		}
 		if (isBlank(name) && isBlank(surname)) {
 			return "";
 		}

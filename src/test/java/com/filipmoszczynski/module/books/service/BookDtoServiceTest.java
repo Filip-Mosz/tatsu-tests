@@ -47,9 +47,7 @@ public class BookDtoServiceTest {
 		// then
 		assertThat(bookDto)
 				.isPresent()
-				.hasValueSatisfying(book -> {
-					assertThat(book.getId()).isEqualTo(BOOK_ID);
-				});
+				.hasValueSatisfying(book -> assertThat(book.getId()).isEqualTo(BOOK_ID));
 	}
 
 	@Test
@@ -65,7 +63,7 @@ public class BookDtoServiceTest {
 	@Test
 	public void shouldReturnList() {
 		// given
-		Mockito.when(bookRepository.findAll()).thenReturn((List<BookEntity>) List.of(
+		Mockito.when(bookRepository.findAll()).thenReturn( List.of(
 				new BookEntity().setId(2L),
 				new BookEntity().setId(3L)
 		));

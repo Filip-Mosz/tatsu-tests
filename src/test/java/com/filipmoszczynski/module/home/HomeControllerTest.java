@@ -14,6 +14,9 @@ public class HomeControllerTest {
 
 	@Test
 	public void shouldReturnController() {
+		assertThat(homeController).isNotNull();
+		assertThat(homeController.greeting()).isEqualTo("Hello World");
+		assertThat(homeController.noGreeting()).isEqualTo("Go away");
 	}
 
 }

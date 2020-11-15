@@ -57,5 +57,21 @@ public class StringTatsuUtilsTest {
                 .isEqualTo("John Doe")
                 .isNotNull()
                 .isNotBlank();
+
+
+        assertThat(StringTatsuUtils.getFullName(null, "Doe"))
+                .isEqualTo("Doe")
+                .isNotNull()
+                .isNotBlank();
+
+        assertThat(StringTatsuUtils.getFullName("Joe", null))
+                .isEqualTo("Joe")
+                .isNotNull()
+                .isNotBlank();
+
+
+        assertThat(StringTatsuUtils.getFullName(null, null))
+                .isEqualTo("")
+                .isNotNull();
     }
 }

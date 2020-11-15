@@ -14,13 +14,33 @@ public class PersonDtoTest {
 	public void shouldReturnEmptyObject() {
 		// given
 		// when
+		PersonDto emptyPerson = new PersonDto();
 		// then
+		assertThat(emptyPerson.getName()).isNull();
+		assertThat(emptyPerson.getEmail()).isNull();
+		assertThat(emptyPerson.getSurname()).isNull();
+		assertThat(emptyPerson.isEmailValid()).isFalse();
 	}
 
 	@Test
 	public void shouldReturnPerson() {
 		// given
 		// when
+		PersonDto validPerson = new PersonDto(NAME, SURNAME, EMAIL);
 		// then
+		assertThat(validPerson.getSurname())
+				.isNotNull()
+				.isEqualTo(SURNAME);
+
+		assertThat(validPerson.getName())
+				.isEqualTo(NAME)
+				.isNotNull();
+
+		assertThat(validPerson.getEmail())
+				.isNotNull()
+				.isEqualTo(EMAIL);
+
+		assertThat(validPerson.isEmailValid())
+				.isTrue();
 	}
 }

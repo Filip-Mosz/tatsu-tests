@@ -35,7 +35,7 @@ public class CollectionTatsuUtilsTest {
 	@Test
 	public void shouldReturnSecondGroupOfColors() {
 		assertThat(CollectionTatsuUtils.getListOfColorsPerType("TYPE_2")).isEqualTo(list2);
-		assertThat(CollectionTatsuUtils.getListOfColorsPerType("TYPE_2")).contains("black");
+		assertThat(CollectionTatsuUtils.getListOfColorsPerType("TYPE_2")).containsExactly("black", "white");
 		assertThat(CollectionTatsuUtils.getListOfColorsPerType("TYPE_2")).contains("white");
 	}
 }
